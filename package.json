@@ -1,7 +1,7 @@
 {
   "name": "ng-simple-widgets",
   "version": "0.5.0",
-  "description": "Barebones widgets for angular applications",
+  "description": "A collection of minimalist widgets for angular applications",
   "main": "./dist/ng-simple-widgets.umd.js",
   "module": "./dist/ng-simple-widgets.js",
   "typings": "./dist/ng-simple-widgets.d.ts",
