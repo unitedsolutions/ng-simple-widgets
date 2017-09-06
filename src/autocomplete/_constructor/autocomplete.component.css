@@ -1,0 +1,30 @@
+.ng-simple-autocomplete-list {
+  opacity: 0;
+}
+
+.ng-simple-autocomplete-list.visible {
+  opacity: 1;
+}
+
+.ng-simple-autocomplete-list.no-events {
+  pointer-events: none;
+}
+
+.ng-simple-autocomplete-list-wrapper {
+  position: relative;
+}
+
+.ng-simple-autocomplete-list-wrapper.cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.ng-simple-autocomplete-list-item.hidden {
+  display: none;
+}

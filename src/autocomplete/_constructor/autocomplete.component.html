@@ -1,0 +1,29 @@
+<div class = "ng-simple-autocomplete">
+  <input #input class = "ng-simple-autocomplete-input" [ngClass] = "inputClasses" 
+  spellcheck = "false" [placeholder] = "placeholder" (keyup) = "keyup($event)" 
+  (focus) = "filterItems()" (blur) = "blur()" (keydown.arrowDown) = "highlightByKeys($event)" 
+  (keydown.arrowUp) = "highlightByKeys($event, false)" (keydown.escape) = "reset()" 
+  (keydown.enter) = "selectItem(); input.blur()" (keydown.tab) = "selectItem()" 
+  (keydown) = "keydown($event)" />
+  
+  <div class = "ng-simple-autocomplete-list" [ngClass] = "{visible: loading}">
+    <div class = "ng-simple-autocomplete-list-item">
+      <span>loading items...</span>
+    </div>
+  </div>
+  
+  <div #list [ngClass] = "{visible: visible, 'no-events': noEvents}"
+  class = "ng-simple-autocomplete-list">
+    <div class = "ng-simple-autocomplete-list-wrapper" [ngClass] = "{cover: useListCover}"
+    (mousemove) = "useListCover = false">
+      <div class = "ng-simple-autocomplete-list-item" *ngFor = "let item of _items" 
+      [ngClass] = "{highlighted: item.highlighted, hidden: item.hidden}"
+      [innerHtml] = "item.readableWithMatches || item.readable" (click) = "selectItem(item)" 
+      (mouseenter) = "highlightItem(item)"></div>
+      
+      <div *ngIf = "noMatch" class = "ng-simple-autocomplete-list-item">
+        <span>No items matched your input</span>
+      </div>
+    </div>
+  </div>
+</div>

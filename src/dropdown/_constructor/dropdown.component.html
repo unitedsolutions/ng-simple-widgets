@@ -1,0 +1,21 @@
+<div class = "ng-simple-dropdown">
+  <div class = "ng-simple-dropdown-selection" tabindex = "0" 
+  (click) = "toggleDisplay()" (blur) = "toggleDisplay(false)"
+  (keydown.space) = "toggleDisplay()" (keydown.enter) = "selectHighlightedItem()"
+  (keydown.enter) = "toggleDisplay()" (keydown.arrowUp) = "highlightByKeys($event)" 
+  (keydown.arrowDown) = "highlightByKeys($event, true)" (keydown.escape) = "reset()"
+  [ngClass] = "selectionClasses">{{selectedValue}}</div>
+  
+  <div #list [ngClass] = "{transparent: transparent, display: display}"
+  class = "ng-simple-dropdown-list">
+    <div class = "ng-simple-dropdown-list-wrapper" [ngClass] = "{cover: useListCover}"
+    (mousemove) = "useListCover = false">
+      <div class = "ng-simple-dropdown-list-item" *ngFor = "let item of items"
+      [ngClass] = "{highlighted: item.highlighted}" (click) = "selectItem(item)" 
+      (mouseenter) = "highlightItem(item)">
+        <div class = "ng-simple-dropdown-list-item-readable"
+        *ngFor = "let readable of item.readables">{{readable}}</div>
+      </div>      
+    </div>
+  </div>
+</div>
