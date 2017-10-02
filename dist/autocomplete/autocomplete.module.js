@@ -32,7 +32,7 @@ _.extend(AutocompleteComponent.prototype, {
     highlightItem: highlightItem,
     highlightByKeys: highlightByKeys
 });
-var AutocompleteModule = (function () {
+var AutocompleteModule = /** @class */ (function () {
     function AutocompleteModule() {
     }
     AutocompleteModule.decorators = [

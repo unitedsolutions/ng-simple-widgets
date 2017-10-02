@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-var AutocompleteComponent = (function () {
+var AutocompleteComponent = /** @class */ (function () {
     function AutocompleteComponent() {
         this.noEvents = true;
         this.previousSelection = '';

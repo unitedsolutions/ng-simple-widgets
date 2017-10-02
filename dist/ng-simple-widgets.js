@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AutocompleteModule } from './autocomplete/autocomplete.module';
 import { DropdownModule } from './dropdown/dropdown.module';
-var ngSimpleWidgetsModule = (function () {
+var ngSimpleWidgetsModule = /** @class */ (function () {
     function ngSimpleWidgetsModule() {
     }
     ngSimpleWidgetsModule.decorators = [

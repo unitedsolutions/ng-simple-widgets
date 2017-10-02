@@ -4,7 +4,7 @@
 	(factory((global.ngSimpleWidgets = {}),global.ng.core,global._,global.ng.common));
 }(this, (function (exports,core,_,common) { 'use strict';
 
-var AutocompleteComponent = (function () {
+var AutocompleteComponent = /** @class */ (function () {
     function AutocompleteComponent() {
         this.noEvents = true;
         this.previousSelection = '';
@@ -77,7 +77,7 @@ var selectItem = function (item) {
     if (item) {
         var value = item.value, readable = item.readable;
         this.previousSelection = readable;
-        this.form.controls[this.for].setValue(value);
+        this.control.setValue(value);
         if (this.inputEl.value !== readable) {
             this.inputEl.value = readable;
         }
@@ -277,7 +277,7 @@ _.extend(AutocompleteComponent.prototype, {
     highlightItem: highlightItem,
     highlightByKeys: highlightByKeys
 });
-var AutocompleteModule = (function () {
+var AutocompleteModule = /** @class */ (function () {
     function AutocompleteModule() {
     }
     AutocompleteModule.decorators = [
@@ -298,7 +298,7 @@ var AutocompleteModule = (function () {
     return AutocompleteModule;
 }());
 
-var DropdownComponent = (function () {
+var DropdownComponent = /** @class */ (function () {
     function DropdownComponent() {
     }
     DropdownComponent.decorators = [
@@ -400,6 +400,12 @@ var highlightByKeys$1 = function (evt, down) {
     this.highlightItem(this.items[index]);
 };
 
+var ngOnChanges = function (changes) {
+    if ('items' in changes) {
+        this.ngOnInit();
+    }
+};
+
 _.extend(DropdownComponent.prototype, {
     toggleDisplay: toggleDisplay,
     reset: reset$1,
@@ -408,9 +414,10 @@ _.extend(DropdownComponent.prototype, {
     ngOnInit: ngOnInit$1,
     ngAfterViewChecked: ngAfterViewChecked$1,
     selectItem: selectItem$1,
-    highlightByKeys: highlightByKeys$1
+    highlightByKeys: highlightByKeys$1,
+    ngOnChanges: ngOnChanges
 });
-var DropdownModule = (function () {
+var DropdownModule = /** @class */ (function () {
     function DropdownModule() {
     }
     DropdownModule.decorators = [
@@ -431,7 +438,7 @@ var DropdownModule = (function () {
     return DropdownModule;
 }());
 
-var ngSimpleWidgetsModule = (function () {
+var ngSimpleWidgetsModule = /** @class */ (function () {
     function ngSimpleWidgetsModule() {
     }
     ngSimpleWidgetsModule.decorators = [

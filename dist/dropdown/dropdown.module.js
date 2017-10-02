@@ -10,6 +10,7 @@ import ngOnInit from './initializer/initializer';
 import ngAfterViewChecked from './view-checked-initializer/view-checked-initializer';
 import selectItem from './item-selector/item-selector';
 import highlightByKeys from './keys-highlighter/keys-highlighter';
+import ngOnChanges from './data-change-handler/data-change-handler';
 _.extend(DropdownComponent.prototype, {
     toggleDisplay: toggleDisplay,
     reset: reset,
@@ -18,9 +19,10 @@ _.extend(DropdownComponent.prototype, {
     ngOnInit: ngOnInit,
     ngAfterViewChecked: ngAfterViewChecked,
     selectItem: selectItem,
-    highlightByKeys: highlightByKeys
+    highlightByKeys: highlightByKeys,
+    ngOnChanges: ngOnChanges
 });
-var DropdownModule = (function () {
+var DropdownModule = /** @class */ (function () {
     function DropdownModule() {
     }
     DropdownModule.decorators = [

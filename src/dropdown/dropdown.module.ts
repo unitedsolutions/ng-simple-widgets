@@ -10,6 +10,7 @@ import ngOnInit              from './initializer/initializer';
 import ngAfterViewChecked    from './view-checked-initializer/view-checked-initializer';
 import selectItem            from './item-selector/item-selector';
 import highlightByKeys       from './keys-highlighter/keys-highlighter';
+import ngOnChanges           from './data-change-handler/data-change-handler';
 
 _.extend(DropdownComponent.prototype, {
   toggleDisplay,
@@ -19,7 +20,8 @@ _.extend(DropdownComponent.prototype, {
   ngOnInit,
   ngAfterViewChecked,
   selectItem,
-  highlightByKeys
+  highlightByKeys,
+  ngOnChanges
 });
 
 @NgModule({

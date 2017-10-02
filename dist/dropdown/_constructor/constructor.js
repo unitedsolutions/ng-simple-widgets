@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-var DropdownComponent = (function () {
+var DropdownComponent = /** @class */ (function () {
     function DropdownComponent() {
     }
     DropdownComponent.decorators = [
