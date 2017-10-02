@@ -358,7 +358,7 @@ var highlightItem$1 = function (highlightedItem) {
     _.extend(this, { highlightedItem: highlightedItem });
 };
 
-var ngOnInit$1 = function () {
+var init = function () {
     var placeholder = this.placeholder;
     if (!placeholder) {
         placeholder = 'Select from the provided choices';
@@ -402,7 +402,7 @@ var highlightByKeys$1 = function (evt, down) {
 
 var ngOnChanges = function (changes) {
     if ('items' in changes) {
-        this.ngOnInit();
+        this.init();
     }
 };
 
@@ -411,7 +411,7 @@ _.extend(DropdownComponent.prototype, {
     reset: reset$1,
     selectHighlightedItem: selectHighlightedItem,
     highlightItem: highlightItem$1,
-    ngOnInit: ngOnInit$1,
+    init: init,
     ngAfterViewChecked: ngAfterViewChecked$1,
     selectItem: selectItem$1,
     highlightByKeys: highlightByKeys$1,

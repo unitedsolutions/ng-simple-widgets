@@ -1,6 +1,6 @@
 export default function (changes) {
     if ('items' in changes) {
-        this.ngOnInit();
+        this.init();
     }
 }
 //# sourceMappingURL=data-change-handler.js.map

@@ -6,7 +6,7 @@ import toggleDisplay         from './display-toggler/display-toggler';
 import reset                 from './resetter/resetter';
 import selectHighlightedItem from './highlighted-item-selector/highlighted-item-selector';
 import highlightItem         from './item-highlighter/item-highlighter';
-import ngOnInit              from './initializer/initializer';
+import init                  from './initializer/initializer';
 import ngAfterViewChecked    from './view-checked-initializer/view-checked-initializer';
 import selectItem            from './item-selector/item-selector';
 import highlightByKeys       from './keys-highlighter/keys-highlighter';
@@ -17,7 +17,7 @@ _.extend(DropdownComponent.prototype, {
   reset,
   selectHighlightedItem,
   highlightItem,
-  ngOnInit,
+  init,
   ngAfterViewChecked,
   selectItem,
   highlightByKeys,
