@@ -1,5 +1,5 @@
 export default function(value = '') {
-  if(!this.control.dirty) {
+  if(this.control.pristine) {
     this.control.markAsDirty();
   }
   

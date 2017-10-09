@@ -266,7 +266,7 @@ var highlightByKeys = function (evt, down) {
 
 var setValue = function (value) {
     if (value === void 0) { value = ''; }
-    if (!this.control.dirty) {
+    if (this.control.pristine) {
         this.control.markAsDirty();
     }
     this.control.setValue(value);
@@ -390,6 +390,9 @@ var ngAfterViewChecked$1 = function () {
 };
 
 var selectItem$1 = function (item) {
+    if (this.control.pristine) {
+        this.control.markAsDirty();
+    }
     this.control.setValue(item.value);
     this.selectedValue = item.readables[0];
 };
