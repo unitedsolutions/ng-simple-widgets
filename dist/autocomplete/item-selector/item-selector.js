@@ -3,7 +3,7 @@ export default function (item) {
     if (item) {
         var value = item.value, readable = item.readable;
         this.previousSelection = readable;
-        this.control.setValue(value);
+        this.setValue(value);
         if (this.inputEl.value !== readable) {
             this.inputEl.value = readable;
         }

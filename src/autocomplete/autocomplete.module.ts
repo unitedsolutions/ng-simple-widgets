@@ -16,6 +16,7 @@ import keyup                    from './keyup-handler/keyup-handler';
 import filterItems              from './items-filterer/items-filterer';
 import highlightItem            from './item-highlighter/item-highlighter';
 import highlightByKeys          from './keys-highlighter/keys-highlighter';
+import setValue                 from './value-setter/value-setter';
 
 _.extend(AutocompleteComponent.prototype, {
   reset,
@@ -31,7 +32,8 @@ _.extend(AutocompleteComponent.prototype, {
   keyup,
   filterItems,
   highlightItem,
-  highlightByKeys
+  highlightByKeys,
+  setValue
 });
 
 @NgModule({

@@ -77,7 +77,7 @@ var selectItem = function (item) {
     if (item) {
         var value = item.value, readable = item.readable;
         this.previousSelection = readable;
-        this.control.setValue(value);
+        this.setValue(value);
         if (this.inputEl.value !== readable) {
             this.inputEl.value = readable;
         }
@@ -111,6 +111,9 @@ var setLoadingStatus = function (loading) {
 var blur = function () {
     this.restorePreviousSelection();
     this.displayList(false);
+    if (this.control.untouched) {
+        this.control.markAsTouched();
+    }
 };
 
 var ignoreKeyNames = [
@@ -137,7 +140,7 @@ var keydown = function (evt) {
     if (_.includes(ignoreKeyNames, evt.key)) {
         return;
     }
-    this.control.setValue('');
+    this.setValue();
     this.setLoadingStatus();
 };
 
@@ -261,6 +264,14 @@ var highlightByKeys = function (evt, down) {
     this.highlightItem(visibles[index]);
 };
 
+var setValue = function (value) {
+    if (value === void 0) { value = ''; }
+    if (!this.control.dirty) {
+        this.control.markAsDirty();
+    }
+    this.control.setValue(value);
+};
+
 _.extend(AutocompleteComponent.prototype, {
     reset: reset,
     resetHighlightedItem: resetHighlightedItem,
@@ -275,7 +286,8 @@ _.extend(AutocompleteComponent.prototype, {
     keyup: keyup,
     filterItems: filterItems,
     highlightItem: highlightItem,
-    highlightByKeys: highlightByKeys
+    highlightByKeys: highlightByKeys,
+    setValue: setValue
 });
 var AutocompleteModule = /** @class */ (function () {
     function AutocompleteModule() {

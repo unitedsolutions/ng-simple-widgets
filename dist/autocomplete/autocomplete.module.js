@@ -16,6 +16,7 @@ import keyup from './keyup-handler/keyup-handler';
 import filterItems from './items-filterer/items-filterer';
 import highlightItem from './item-highlighter/item-highlighter';
 import highlightByKeys from './keys-highlighter/keys-highlighter';
+import setValue from './value-setter/value-setter';
 _.extend(AutocompleteComponent.prototype, {
     reset: reset,
     resetHighlightedItem: resetHighlightedItem,
@@ -30,7 +31,8 @@ _.extend(AutocompleteComponent.prototype, {
     keyup: keyup,
     filterItems: filterItems,
     highlightItem: highlightItem,
-    highlightByKeys: highlightByKeys
+    highlightByKeys: highlightByKeys,
+    setValue: setValue
 });
 var AutocompleteModule = /** @class */ (function () {
     function AutocompleteModule() {

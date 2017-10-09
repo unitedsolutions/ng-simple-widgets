@@ -4,7 +4,7 @@ export default function (evt) {
     if (_.includes(ignoreKeyNames, evt.key)) {
         return;
     }
-    this.control.setValue('');
+    this.setValue();
     this.setLoadingStatus();
 }
 //# sourceMappingURL=keydown-handler.js.map

@@ -3,7 +3,7 @@ export default function(item = this.highlightedItem) {
     let {value, readable} = item;
     
     this.previousSelection = readable;
-    this.control.setValue(value);
+    this.setValue(value);
     
     if(this.inputEl.value !== readable) {
       this.inputEl.value = readable;

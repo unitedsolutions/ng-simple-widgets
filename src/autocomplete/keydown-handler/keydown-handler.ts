@@ -6,6 +6,6 @@ export default function(evt) {
     return;
   }
   
-  this.control.setValue('');
+  this.setValue();
   this.setLoadingStatus();  
 }
