@@ -1,6 +1,6 @@
 <div class = "ng-simple-dropdown">
   <div class = "ng-simple-dropdown-selection" tabindex = "0" 
-  (click) = "toggleDisplay()" (blur) = "toggleDisplay(false)"
+  (click) = "toggleDisplay()" (blur) = "toggleDisplay(false); blur()"
   (keydown.space) = "toggleDisplay()" (keydown.enter) = "selectHighlightedItem()"
   (keydown.enter) = "toggleDisplay()" (keydown.arrowUp) = "highlightByKeys($event)" 
   (keydown.arrowDown) = "highlightByKeys($event, true)" (keydown.escape) = "reset()"

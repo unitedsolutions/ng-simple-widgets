@@ -11,8 +11,10 @@ import ngAfterViewChecked from './view-checked-initializer/view-checked-initiali
 import selectItem from './item-selector/item-selector';
 import highlightByKeys from './keys-highlighter/keys-highlighter';
 import ngOnChanges from './data-change-handler/data-change-handler';
+import blur from './blur-handler/blur-handler';
 _.extend(DropdownComponent.prototype, {
     toggleDisplay: toggleDisplay,
+    blur: blur,
     reset: reset,
     selectHighlightedItem: selectHighlightedItem,
     highlightItem: highlightItem,
